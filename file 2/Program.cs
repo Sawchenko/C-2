@@ -1,13 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Console.Write("Введите число: ");
-int a = Convert.ToInt32(Console.ReadLine());
-if(a>99)
+﻿int number = ReadInt("Введите число: ");
+int count = number.ToString().Length;
+Console.Write(MakeArray(number, count));
+int ReadInt(string message)
 {
- while (true)
- {
-    a=a/10;
- }
- Console.Write("Третья по счету цифра: {0}" , a%10);
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
-else Console.Write("Третьей цифры нет");
+int MakeArray(int a, int b)
+{
+int result = 0;
+    if (b < 3)
+    {
+        Console.Write("Третьей цифры нет, держи: ");
+    }
+    else
+    {
+        int c = 1;
+        for (int i = b; i > 3; i--)
+        {
+            c = c * 10;
+        }
+
+        result = (a / c) % 10;
+    }
+return result;
+}
