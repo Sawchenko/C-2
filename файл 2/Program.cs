@@ -1,4 +1,4 @@
-﻿int number = ReadInt("Введите число: ");
+int number = ReadInt("Введите число: ");
 int count = number.ToString().Length;
 Console.Write(MakeArray(number, count));
 int ReadInt(string message)
